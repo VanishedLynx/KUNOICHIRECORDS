@@ -1,0 +1,143 @@
+/* Laad het .otf bestand (niet ideaal voor webgebruik, maar kan werken) */
+@font-face {
+    font-family: 'FOT-Matisse Pro EB';
+    src: url('../fonts/FOT-Matisse-Pro-EB.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Verwijder alles wat zorgt voor ongewenste ruimte bovenaan de pagina */
+html, body {
+    font-family: 'FOT-Matisse Pro EB', Arial, sans-serif; /* Gebruik de nieuwe font */
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #00000000; /* Transparante achtergrond */
+    color: #333;
+    position: relative; /* Zorgt ervoor dat pseudo-elementen kunnen worden gepositioneerd */
+    overflow: hidden; /* Zorgt ervoor dat niets buiten de body verschijnt */
+    height: 100%; /* Zorgt ervoor dat de volledige hoogte van de pagina wordt benut */
+}
+
+/* Zorg ervoor dat de video de gehele achtergrond bedekt */
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0; /* Zet de video onder alle andere elementen */
+}
+
+/* Verwijder de vignette-effect (body::before) om de transparante balk te verwijderen */
+body::before {
+    content: ""; 
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: none; /* Zorg ervoor dat er geen achtergrondkleur of effect is */
+    pointer-events: none; /* Zorgt ervoor dat het niet interactief is */
+    z-index: 1; /* Zorgt ervoor dat het boven de video komt */
+}
+
+/* Overlay met PNG afbeelding */
+#overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2; /* Zet de overlay boven de video */
+    pointer-events: none; /* Zorgt ervoor dat de overlay geen interactie blokkeert */
+}
+
+#overlay img {
+    width: 100%; /* Zorg ervoor dat de afbeelding de volledige breedte vult */
+    height: 100%; /* Zorg ervoor dat de afbeelding de volledige hoogte vult */
+    object-fit: contain; /* Zorgt ervoor dat de afbeelding volledig zichtbaar is */
+    position: absolute;
+    transform: translateX(-100px); /* Verplaats de afbeelding naar links */
+}
+
+/* Footer naar de linkeronderkant van de pagina */
+footer {
+    position: absolute;
+    left: 0; /* Plaatst de footer helemaal links */
+    bottom: 0px; /* Plaatst de footer helemaal onderaan */
+    padding: 20px; /* Voeg wat padding toe voor ruimte rondom de tekst */
+    width: 100%; /* Zorg ervoor dat de footer de volledige breedte van de pagina vult */
+    text-align: left; /* Zorg ervoor dat de tekst links uitgelijnd is */
+    color: white; /* Zet de tekstkleur naar wit voor contrast (pas dit aan naar wens) */
+    font-size: larger;
+    font-family: 'FOT-Matisse Pro EB', Arial, sans-serif; /* Je nieuwe font */
+    z-index: 10; /* Zorgt ervoor dat de footer boven andere elementen staat */
+}
+
+/* Toegevoegde tekst die verandert bij hover */
+#hover-text {
+    font-family: 'FOT-Matisse Pro EB', Arial, sans-serif; /* Gebruik je gewenste font */
+    font-size: 30px; /* Pas de grootte aan naar wens */
+    color: white; /* Oorspronkelijke kleur */
+    position: absolute; /* Zet de tekst op een vaste locatie */
+    bottom: 90px; /* Zet de tekst 10px van de onderkant */
+    left: 50px; /* Zet de tekst 10px van de linkerkant */
+    transition: all 0.5s ease; /* Zorg voor een soepele overgang voor kleur en transformatie */
+    cursor: pointer; /* Verander de cursor naar pointer om aan te geven dat het interactief is */
+    z-index: 15; /* Zorg ervoor dat de tekst boven de andere elementen komt */
+}
+
+/* Hover-effect voor de tekst */
+#hover-text:hover {
+    color: #ffffff; /* Verander de kleur bij hover */
+    transform: scale(1.1); /* Voeg een schalingseffect toe */
+    font-family: FOT-Matisse Pro EB, sans-serif;
+}
+
+/* Stijl voor de tekst-knop zonder achtergrond */
+#text-button {
+    font-family: Arial, sans-serif;
+    font-size: 35px;
+    color: white;
+    padding: 0; /* Verwijder padding */
+    text-align: center;
+    display: inline-block;
+    cursor: pointer; /* Laat zien dat het interactief is */
+    position: absolute;
+    bottom: 140px; /* Positie boven de hover-tekst */
+    left: 150px; /* Horizontaal geplaatst zoals je vroeg */
+    transform: translateX(-50%); /* Zorg ervoor dat het precies gecentreerd is */
+    font-family: FOT-Matisse Pro EB, sans-serif;
+    z-index: 15; /* Zorg dat het boven andere elementen staat */
+    transition: all 0.5s ease; /* Zorg voor een vloeiende transitie */
+}
+
+/* Hover-effect voor de tekst-knop zonder achtergrond */
+#text-button:hover {
+    color: #ffffff; /* Verander tekstkleur bij hover */
+    transform: scale(1.1); /* Voeg een schalingseffect toe */
+    font-family: FOT-Matisse Pro EB, sans-serif;
+}
+
+/* De GIF-container die begint met opacity 0 */
+#gif-container {
+    position: fixed; /* Plaats de GIF in het midden van de pagina */
+    top: 50%; /* Verticaal gecentreerd */
+    left: 50%; /* Horizontaal gecentreerd */
+    transform: translate(-50%, -50%); /* Centraal uitlijnen */
+    opacity: 0; /* Maak de GIF aanvankelijk onzichtbaar */
+    transition: opacity 2s ease; /* Geleidelijk verschijnen */
+    z-index: 5; /* Zorg dat de GIF onder andere elementen staat */
+}
+
+#gif-container img {
+    width: 600px; /* Pas de grootte van de GIF aan zoals je wilt */
+}
+
+/* De GIF verschijnt als je over de knop heen gaat */
+#text-button:hover ~ #gif-container {
+    opacity: 1; /* Maak de GIF zichtbaar bij hover */
+}
+
