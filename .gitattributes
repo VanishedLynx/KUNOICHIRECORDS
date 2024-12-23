@@ -1,3 +1,14 @@
 *.mp4 filter=lfs diff=lfs merge=lfs -text
 *.gif filter=lfs diff=lfs merge=lfs -text
 videos/bgvideo.mp4 filter=lfs diff=lfs merge=lfs -text
+Dit filter=lfs diff=lfs merge=lfs -text
+zorgt filter=lfs diff=lfs merge=lfs -text
+dat filter=lfs diff=lfs merge=lfs -text
+.mp4 filter=lfs diff=lfs merge=lfs -text
+beheerd filter=lfs diff=lfs merge=lfs -text
+door filter=lfs diff=lfs merge=lfs -text
+\# filter=lfs diff=lfs merge=lfs -text
+ervoor filter=lfs diff=lfs merge=lfs -text
+bestanden filter=lfs diff=lfs merge=lfs -text
+worden filter=lfs diff=lfs merge=lfs -text
+LFS filter=lfs diff=lfs merge=lfs -text
