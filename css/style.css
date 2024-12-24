@@ -104,4 +104,77 @@ footer {
     transition: all 0.5s ease;
 }
 
-/* Hover
+/* Hover-effect voor de tekst-knop zonder achtergrond (alleen voor desktop) */
+#text-button:hover {
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+/* De GIF-container die begint met opacity 0 */
+#gif-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 2s ease;
+    z-index: 5;
+}
+
+/* Laad de GIF op een lagere resolutie op mobiele apparaten */
+#gif-container img {
+    width: 600px;
+}
+
+/* De GIF verschijnt als je over de knop heen gaat */
+#text-button:hover ~ #gif-container {
+    opacity: 1;
+}
+
+/* Media query voor mobiele apparaten */
+@media only screen and (max-width: 768px) {
+    /* Verberg de overlay afbeelding op mobiel */
+    #overlay {
+        display: none;
+    }
+
+    /* Zorg ervoor dat de tekst-knop onderaan het scherm verschijnt en gecentreerd is */
+    #text-button {
+        font-size: 28px;
+        bottom: 20px; /* Verplaats de knop naar beneden */
+        left: 50%; /* Centreer de knop horizontaal */
+        transform: translateX(-50%); /* Perfect centreren */
+        position: absolute; /* Absoluut gepositioneerd ten opzichte van de body */
+    }
+
+    /* Zorg ervoor dat de hover tekst bovenaan verschijnt */
+    #hover-text {
+        font-size: 20px;
+        bottom: 90%; /* Verplaats de hover-tekst naar boven */
+        left: 50%;
+        transform: translateX(-50%); /* Centreer de hover-tekst */
+    }
+
+    /* Zorg ervoor dat de video goed schaalt op mobiel */
+    #background-video {
+        object-fit: cover;
+        height: 100%; /* Laat de video volledig het scherm vullen */
+        top: 0;
+    }
+
+    /* Verklein de gif op mobiel */
+    #gif-container img {
+        width: 200px; /* Verklein de gif voor mobiel */
+    }
+
+    /* Zorg ervoor dat er geen hover-effecten zijn op mobiel */
+    #text-button:hover {
+        transform: none;
+        color: white;
+    }
+
+    #hover-text:hover {
+        transform: none;
+        color: white;
+    }
+}
