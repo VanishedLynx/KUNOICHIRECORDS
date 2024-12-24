@@ -58,6 +58,8 @@
                 videoElement.removeChild(videoElement.firstChild);
             }
 
+            console.log("Loading video for device...");
+
             // Controleer of de gebruiker op een mobiel apparaat zit
             if (isMobile()) {
                 // Voeg WebM video toe voor mobiel
@@ -65,12 +67,14 @@
                 sourceWebM.src = 'videos/bgvideo.webm'; // Je WebM video
                 sourceWebM.type = 'video/webm';
                 videoElement.appendChild(sourceWebM);
+                console.log('WebM video added for mobile');
             } else {
                 // Voeg MP4 video toe voor desktop
                 const sourceMP4 = document.createElement('source');
                 sourceMP4.src = 'videos/bgvideo.mp4'; // Je MP4 video
                 sourceMP4.type = 'video/mp4';
                 videoElement.appendChild(sourceMP4);
+                console.log('MP4 video added for desktop');
             }
         }
 

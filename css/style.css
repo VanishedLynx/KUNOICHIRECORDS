@@ -1,3 +1,11 @@
+/* Laad het .otf bestand (niet ideaal voor webgebruik, maar kan werken) */
+@font-face {
+    font-family: 'FOT-Matisse Pro EB';
+    src: url('../fonts/FOT-Matisse-Pro-EB.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* Verwijder alles wat zorgt voor ongewenste ruimte bovenaan de pagina */
 html, body {
     font-family: 'FOT-Matisse Pro EB', Arial, sans-serif;
@@ -23,10 +31,9 @@ html, body {
     z-index: 0;
     pointer-events: none; /* Zorgt ervoor dat je niet per ongeluk kunt interageren met de video */
     display: block;
-    /* Zorg ervoor dat de video altijd op het scherm wordt weergegeven */
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
     background-color: black; /* Voeg een zwarte achtergrond toe voor als de video niet wordt geladen */
-    transition: opacity 1s ease-in-out; /* Smooth fade in effect */
-    opacity: 1; /* Zorg ervoor dat de video zichtbaar is */
 }
 
 /* Overlay met PNG afbeelding */
@@ -145,31 +152,8 @@ footer {
     /* Zorg ervoor dat de hover tekst bovenaan verschijnt */
     #hover-text {
         font-size: 20px;
-        bottom: 90%; /* Verplaats de hover-tekst naar boven */
+        bottom: 90%; /* Verplaats de tekst naar de bovenkant */
         left: 50%;
-        transform: translateX(-50%); /* Centreer de hover-tekst */
-    }
-
-    /* Zorg ervoor dat de video goed schaalt op mobiel */
-    #background-video {
-        object-fit: cover;
-        height: 100%; /* Laat de video volledig het scherm vullen */
-        top: 0;
-    }
-
-    /* Verklein de gif op mobiel */
-    #gif-container img {
-        width: 200px; /* Verklein de gif voor mobiel */
-    }
-
-    /* Zorg ervoor dat er geen hover-effecten zijn op mobiel */
-    #text-button:hover {
-        transform: none;
-        color: white;
-    }
-
-    #hover-text:hover {
-        transform: none;
-        color: white;
+        transform: translateX(-50%);
     }
 }
