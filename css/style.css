@@ -34,18 +34,6 @@ html, body {
     display: block; /* Zorg ervoor dat de video als block wordt weergegeven */
 }
 
-/* Browser-specifieke stijlen voor video om autoplay te garanderen */
-#background-video {
-    -webkit-overflow-scrolling: touch; /* Ondersteuning voor scrollen op iOS-apparaten */
-    -webkit-transform: translate3d(0, 0, 0); /* Verbeter de prestaties op iOS */
-    -webkit-backface-visibility: hidden; /* Verbergt de achterkant van de video op iOS */
-    -moz-transform: translate3d(0, 0, 0); /* Firefox-specific */
-    -ms-transform: translate3d(0, 0, 0); /* Voor oudere IE */
-    transform: translate3d(0, 0, 0); /* Algemeen */
-    -webkit-transition: all 1s ease-in-out; /* Smooth transitions voor iOS */
-    transition: all 1s ease-in-out;
-}
-
 /* Overlay met PNG afbeelding */
 #overlay {
     position: absolute;
