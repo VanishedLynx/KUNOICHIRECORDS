@@ -1,4 +1,4 @@
-/* Laad het .otf bestand (niet ideaal voor webgebruik, maar kan werken) */
+/* Laad het .otf bestand */
 @font-face {
     font-family: 'FOT-Matisse Pro EB';
     src: url('../fonts/FOT-Matisse-Pro-EB.otf') format('opentype');
@@ -6,18 +6,18 @@
     font-style: normal;
 }
 
-/* Verwijder alles wat zorgt voor ongewenste ruimte bovenaan de pagina */
+/* Algemene body- en HTML instellingen */
 html, body {
     font-family: 'FOT-Matisse Pro EB', Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #00000000; /* Transparante achtergrond */
+    background-color: transparent; /* Transparante achtergrond */
     color: #333;
     position: relative;
-    overflow: hidden; /* Zorgt ervoor dat niets buiten de body verschijnt */
-    height: 100%; /* Zorgt ervoor dat de volledige hoogte van de pagina wordt benut */
-    min-height: 100vh; /* Zorg ervoor dat de pagina minimaal het scherm vult */
+    overflow: hidden;
+    height: 100%;
+    min-height: 100vh;
 }
 
 /* Video-instellingen voor desktop en mobiel */
@@ -27,11 +27,11 @@ html, body {
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Zorgt ervoor dat de video altijd het scherm vult */
+    object-fit: cover;
     z-index: 0;
     pointer-events: none;
-    playsinline: true; /* Voorkom fullscreen op mobiele apparaten */
-    display: block; /* Zorg ervoor dat de video als block wordt weergegeven */
+    display: block;
+    playsinline: true;
 }
 
 /* Overlay met PNG afbeelding */
@@ -53,11 +53,11 @@ html, body {
     transform: translateX(-100px); /* Verplaats de afbeelding naar links */
 }
 
-/* Footer naar de linkeronderkant van de pagina */
+/* Footer instellingen */
 footer {
     position: absolute;
     left: 0;
-    bottom: 0px;
+    bottom: 0;
     padding: 20px;
     width: 100%;
     text-align: left;
@@ -67,50 +67,47 @@ footer {
     z-index: 10;
 }
 
-/* Toegevoegde tekst die verandert bij hover */
+/* Hover-tekst instellingen */
 #hover-text {
-    font-family: 'FOT-Matisse Pro EB', Arial, sans-serif;
     font-size: 30px;
     color: white;
     position: absolute;
     bottom: 90px;
-    left: 50px;
+    left: 50%;
+    transform: translateX(-50%);
     transition: all 0.5s ease;
     cursor: pointer;
     z-index: 15;
 }
 
-/* Hover-effect voor de tekst */
+/* Hover-effect voor de hover-tekst */
 #hover-text:hover {
     color: #ffffff;
     transform: scale(1.1);
 }
 
-/* Stijl voor de tekst-knop zonder achtergrond */
+/* Text knop instellingen */
 #text-button {
-    font-family: Arial, sans-serif;
     font-size: 35px;
     color: white;
     padding: 0;
     text-align: center;
-    display: inline-block;
     cursor: pointer;
     position: absolute;
     bottom: 140px;
-    left: 150px;
+    left: 50%;
     transform: translateX(-50%);
-    font-family: FOT-Matisse Pro EB, sans-serif;
     z-index: 15;
     transition: all 0.5s ease;
 }
 
-/* Hover-effect voor de tekst-knop zonder achtergrond */
+/* Hover-effect voor de tekst-knop */
 #text-button:hover {
     color: #ffffff;
     transform: scale(1.1);
 }
 
-/* De GIF-container die begint met opacity 0 */
+/* GIF-container instellingen */
 #gif-container {
     position: fixed;
     top: 50%;
@@ -121,12 +118,12 @@ footer {
     z-index: 5;
 }
 
-/* Laad de GIF op een lagere resolutie op mobiele apparaten */
+/* GIF instellingen */
 #gif-container img {
     width: 600px;
 }
 
-/* De GIF verschijnt als je over de knop heen gaat */
+/* De GIF verschijnt bij hover */
 #text-button:hover ~ #gif-container {
     opacity: 1;
 }
@@ -138,33 +135,30 @@ footer {
         display: none;
     }
 
-    /* Zorg ervoor dat de tekst-knop onderaan het scherm verschijnt en gecentreerd is */
+    /* Verplaats de tekst-knop naar beneden en centreer deze */
     #text-button {
         font-size: 28px;
-        bottom: 20px; /* Verplaats de knop naar beneden */
-        left: 50%; /* Centreer de knop horizontaal */
-        transform: translateX(-50%); /* Perfect centreren */
-        position: absolute; /* Absoluut gepositioneerd ten opzichte van de body */
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
     }
 
-    /* Zorg ervoor dat de hover tekst bovenaan verschijnt */
+    /* Verplaats de hover-tekst naar boven en centreer deze */
     #hover-text {
         font-size: 20px;
-        bottom: 90%; /* Verplaats de hover-tekst naar boven */
+        bottom: 90%;
         left: 50%;
-        transform: translateX(-50%); /* Centreer de hover-tekst */
+        transform: translateX(-50%);
     }
 
     /* Zorg ervoor dat de video goed schaalt op mobiel */
     #background-video {
-        object-fit: cover;
-        height: 100%; /* Laat de video volledig het scherm vullen */
-        top: 0;
+        height: 100%;
     }
 
     /* Verklein de gif op mobiel */
     #gif-container img {
-        width: 200px; /* Verklein de gif voor mobiel */
+        width: 200px;
     }
 
     /* Schakel hover-effecten uit voor mobiel */
