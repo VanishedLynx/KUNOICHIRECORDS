@@ -97,7 +97,7 @@ footer {
     cursor: pointer;
     position: absolute;
     bottom: 140px;
-    left: 150px;
+    left: 150px; /* Knop verschuiven naar links op desktop */
     transform: translateX(-50%);
     font-family: FOT-Matisse Pro EB, sans-serif;
     z-index: 15;
