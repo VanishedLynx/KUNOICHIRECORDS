@@ -29,7 +29,7 @@ html, body {
     height: 100%;
     object-fit: cover; /* Zorgt ervoor dat de video altijd het scherm vult */
     z-index: 0;
-    pointer-events: none;
+    pointer-events: none; /* Zorgt ervoor dat je niet per ongeluk kunt interageren met de video */
     playsinline: true; /* Voorkom fullscreen op mobiele apparaten */
     display: block; /* Zorg ervoor dat de video als block wordt weergegeven */
 }
@@ -147,13 +147,12 @@ footer {
         position: absolute; /* Absoluut gepositioneerd ten opzichte van de body */
     }
 
-    /* Zorg ervoor dat de hover tekst bovenaan het scherm verschijnt en gecentreerd is */
+    /* Zorg ervoor dat de hover tekst bovenaan verschijnt */
     #hover-text {
         font-size: 20px;
-        top: 20px; /* Verplaats de hover-tekst naar boven */
-        left: 50%; /* Centreer de hover-tekst horizontaal */
-        transform: translateX(-50%); /* Perfect centreren */
-        position: absolute; /* Absoluut gepositioneerd ten opzichte van de body */
+        bottom: 90%; /* Verplaats de hover-tekst naar boven */
+        left: 50%;
+        transform: translateX(-50%); /* Centreer de hover-tekst */
     }
 
     /* Zorg ervoor dat de video goed schaalt op mobiel */

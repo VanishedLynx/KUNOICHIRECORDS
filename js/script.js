@@ -7,27 +7,6 @@ function isMobile() {
     return window.matchMedia("only screen and (max-width: 768px)").matches;
 }
 
-// Functie om de tekst te veranderen bij klik
-function changeText(elementId) {
-    const element = document.getElementById(elementId);
-
-    if (elementId === 'hover-text') {
-        if (element.textContent === 'ここで何をしているの..？') {
-            element.textContent = 'WHAT ARE YOU DOING HERE..?'; // Engelse tekst bij klik
-        } else {
-            element.textContent = 'ここで何をしているの..？'; // Japans tekst terugzetten bij klik
-        }
-    }
-
-    if (elementId === 'text-button') {
-        if (element.textContent === 'ゼノフェスト') {
-            element.textContent = 'XENO-FEST'; // Engelse tekst bij klik
-        } else {
-            element.textContent = 'ゼノフェスト'; // Japans tekst terugzetten bij klik
-        }
-    }
-}
-
 // Voeg de hover-functionaliteit toe aan de hover-tekst (alleen op desktop)
 if (!isMobile()) {
     hoverText.addEventListener('mouseenter', function () {
@@ -51,11 +30,4 @@ if (!isMobile()) {
 }
 
 // Voeg de klikfunctionaliteit toe aan de hover-tekst (voor mobiel)
-hoverText.addEventListener('click', function () {
-    changeText('hover-text');
-});
-
-// Voeg de klikfunctionaliteit toe aan de tekst-knop (voor mobiel)
-textButton.addEventListener('click', function () {
-    changeText('text-button');
-});
+hover
