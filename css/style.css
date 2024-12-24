@@ -141,3 +141,32 @@ footer {
     opacity: 1; /* Maak de GIF zichtbaar bij hover */
 }
 
+/* Responsive ontwerp voor mobiele apparaten */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    /* Pas de video aan voor kleinere schermen */
+    #background-video {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Pas de tekstknop aan */
+    #text-button {
+        font-size: 28px;
+        bottom: 120px;
+    }
+
+    /* Pas de hover-tekst aan */
+    #hover-text {
+        font-size: 20px;
+        bottom: 60px;
+    }
+
+    /* Pas de GIF-container aan voor kleinere schermen */
+    #gif-container img {
+        width: 80%; /* Maak de GIF kleiner voor mobiele apparaten */
+    }
+}
