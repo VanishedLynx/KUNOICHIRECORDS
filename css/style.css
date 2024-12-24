@@ -77,6 +77,7 @@ html, body {
         object-fit: cover; /* Zorgt ervoor dat de video het scherm bedekt */
     }
 
+    /* Centraal positioneren van de text-button op mobiel */
     #text-button {
         font-size: 28px;
         position: absolute;
@@ -85,6 +86,7 @@ html, body {
         transform: translateX(-50%); /* Centreert de knop horizontaal */
     }
 
+    /* Centraal positioneren van de hover-text op mobiel */
     #hover-text {
         font-size: 20px;
         position: absolute;
@@ -93,45 +95,13 @@ html, body {
         transform: translateX(-50%); /* Centreert de tekst horizontaal */
     }
 
+    /* Laad de GIF op een lagere resolutie op mobiele apparaten */
     #gif-container img {
         width: 300px;
     }
 }
 
-/* Footer naar de linkeronderkant van de pagina */
-footer {
-    position: absolute;
-    left: 0;
-    bottom: 0px;
-    padding: 20px;
-    width: 100%;
-    text-align: left;
-    color: white;
-    font-size: larger;
-    font-family: 'FOT-Matisse Pro EB', Arial, sans-serif;
-    z-index: 10;
-}
-
-/* Toegevoegde tekst die verandert bij hover */
-#hover-text {
-    font-family: 'FOT-Matisse Pro EB', Arial, sans-serif;
-    font-size: 30px;
-    color: white;
-    position: absolute;
-    bottom: 90px;
-    left: 50px;
-    transition: all 0.5s ease;
-    cursor: pointer;
-    z-index: 15;
-}
-
-/* Hover-effect voor de tekst */
-#hover-text:hover {
-    color: #ffffff;
-    transform: scale(1.1);
-}
-
-/* Stijl voor de tekst-knop zonder achtergrond */
+/* Standaard instellingen voor de text-button op desktop */
 #text-button {
     font-family: Arial, sans-serif;
     font-size: 35px;
@@ -151,6 +121,25 @@ footer {
 
 /* Hover-effect voor de tekst-knop zonder achtergrond */
 #text-button:hover {
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+/* Hover-effect voor de hover-tekst */
+#hover-text {
+    font-family: 'FOT-Matisse Pro EB', Arial, sans-serif;
+    font-size: 30px;
+    color: white;
+    position: absolute;
+    bottom: 90px;
+    left: 50px;
+    transition: all 0.5s ease;
+    cursor: pointer;
+    z-index: 15;
+}
+
+/* Hover-effect voor de tekst */
+#hover-text:hover {
     color: #ffffff;
     transform: scale(1.1);
 }
