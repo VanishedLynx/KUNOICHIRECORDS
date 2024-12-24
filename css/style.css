@@ -56,7 +56,7 @@ body::before {
 
 #overlay img {
     width: 100%; /* Zorg ervoor dat de afbeelding de volledige breedte vult */
-    height: 100%; /* Zorg ervoor dat de afbeelding de volledige hoogte vult */
+    height: auto; /* Zorgt ervoor dat de afbeelding proportioneel schaalt */
     object-fit: contain; /* Zorgt ervoor dat de afbeelding volledig zichtbaar is */
     position: absolute;
     transform: translateX(-100px); /* Verplaats de afbeelding naar links */
@@ -79,11 +79,11 @@ footer {
 /* Toegevoegde tekst die verandert bij hover */
 #hover-text {
     font-family: 'FOT-Matisse Pro EB', Arial, sans-serif; /* Gebruik je gewenste font */
-    font-size: 30px; /* Pas de grootte aan naar wens */
+    font-size: 4vw; /* Gebruik viewport units voor flexibele lettergrootte */
     color: white; /* Oorspronkelijke kleur */
     position: absolute; /* Zet de tekst op een vaste locatie */
     bottom: 90px; /* Zet de tekst 10px van de onderkant */
-    left: 50px; /* Zet de tekst 10px van de linkerkant */
+    left: 5%; /* Zet de tekst 5% van de linkerkant */
     transition: all 0.5s ease; /* Zorg voor een soepele overgang voor kleur en transformatie */
     cursor: pointer; /* Verander de cursor naar pointer om aan te geven dat het interactief is */
     z-index: 15; /* Zorg ervoor dat de tekst boven de andere elementen komt */
@@ -99,7 +99,7 @@ footer {
 /* Stijl voor de tekst-knop zonder achtergrond */
 #text-button {
     font-family: Arial, sans-serif;
-    font-size: 35px;
+    font-size: 6vw; /* Gebruik viewport units voor flexibele lettergrootte */
     color: white;
     padding: 0; /* Verwijder padding */
     text-align: center;
@@ -107,7 +107,7 @@ footer {
     cursor: pointer; /* Laat zien dat het interactief is */
     position: absolute;
     bottom: 140px; /* Positie boven de hover-tekst */
-    left: 150px; /* Horizontaal geplaatst zoals je vroeg */
+    left: 50%; /* Horizontaal gecentreerd */
     transform: translateX(-50%); /* Zorg ervoor dat het precies gecentreerd is */
     font-family: FOT-Matisse Pro EB, sans-serif;
     z-index: 15; /* Zorg dat het boven andere elementen staat */
@@ -133,7 +133,9 @@ footer {
 }
 
 #gif-container img {
-    width: 600px; /* Pas de grootte van de GIF aan zoals je wilt */
+    width: 80%; /* Maak de GIF smaller op mobiele apparaten */
+    max-width: 600px; /* Zorg ervoor dat de GIF niet groter wordt dan 600px */
+    height: auto; /* Zorgt ervoor dat de GIF proportioneel schaalt */
 }
 
 /* De GIF verschijnt als je over de knop heen gaat */
@@ -155,18 +157,19 @@ footer {
 
     /* Pas de tekstknop aan */
     #text-button {
-        font-size: 28px;
+        font-size: 8vw; /* Grotere knoptekst op mobiele schermen */
         bottom: 120px;
     }
 
     /* Pas de hover-tekst aan */
     #hover-text {
-        font-size: 20px;
+        font-size: 6vw; /* Grotere tekst bij hover op mobiele schermen */
         bottom: 60px;
     }
 
-    /* Pas de GIF-container aan voor kleinere schermen */
+    /* GIF-container voor mobiel aanpassen */
     #gif-container img {
-        width: 80%; /* Maak de GIF kleiner voor mobiele apparaten */
+        width: 80%; /* Zorg ervoor dat de GIF kleiner wordt weergegeven op mobiel */
+        max-width: 500px; /* Zorg ervoor dat de GIF niet groter is dan 500px op mobiel */
     }
 }
