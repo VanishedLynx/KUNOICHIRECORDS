@@ -147,12 +147,13 @@ footer {
         position: absolute; /* Absoluut gepositioneerd ten opzichte van de body */
     }
 
-    /* Zorg ervoor dat de hover tekst bovenaan verschijnt */
+    /* Zorg ervoor dat de hover tekst bovenaan het scherm verschijnt en gecentreerd is */
     #hover-text {
         font-size: 20px;
-        bottom: 90%; /* Verplaats de hover-tekst naar boven */
-        left: 50%;
-        transform: translateX(-50%); /* Centreer de hover-tekst */
+        top: 20px; /* Verplaats de hover-tekst naar boven */
+        left: 50%; /* Centreer de hover-tekst horizontaal */
+        transform: translateX(-50%); /* Perfect centreren */
+        position: absolute; /* Absoluut gepositioneerd ten opzichte van de body */
     }
 
     /* Zorg ervoor dat de video goed schaalt op mobiel */
