@@ -74,7 +74,6 @@ footer {
     position: absolute;
     bottom: 90px;
     left: 50%; /* Centraal op de pagina */
-    transform: translateX(-50%); /* Centraal uitlijnen */
     transition: all 0.5s ease;
     cursor: pointer;
     z-index: 15;
@@ -92,7 +91,6 @@ footer {
     position: absolute;
     bottom: 140px;
     left: 50%; /* Centraal op de pagina */
-    transform: translateX(-50%); /* Centraal uitlijnen */
     z-index: 15;
     transition: all 0.5s ease;
 }
@@ -130,7 +128,7 @@ footer {
         font-size: 28px;
         bottom: 20px; /* Verplaats de knop naar beneden */
         left: 50%; /* Centreer de knop horizontaal */
-        transform: translateX(-50%); /* Perfect centreren */
+        transform: none; /* Verwijder de horizontale verschuiving */
     }
 
     /* Zorg ervoor dat de hover tekst bovenaan verschijnt */
@@ -138,7 +136,7 @@ footer {
         font-size: 20px;
         bottom: 90%; /* Verplaats de hover-tekst naar boven */
         left: 50%;
-        transform: translateX(-50%); /* Centreer de hover-tekst */
+        transform: none; /* Verwijder de horizontale verschuiving */
     }
 
     /* Zorg ervoor dat de video goed schaalt op mobiel */
