@@ -8,7 +8,7 @@
 
 /* Verwijder alles wat zorgt voor ongewenste ruimte bovenaan de pagina */
 html, body {
-    font-family: 'FOT-Matisse Pro EB', Arial, sans-serif;
+    font-family: 'FOT-Matisse Pro EB', Arial, sans-serif; /* Toepassing van het juiste font */
     line-height: 1.6;
     margin: 0;
     padding: 0;
@@ -62,13 +62,13 @@ footer {
     text-align: left;
     color: white;
     font-size: larger;
-    font-family: 'FOT-Matisse Pro EB', Arial, sans-serif;
+    font-family: 'FOT-Matisse Pro EB', Arial, sans-serif; /* Font consistent toepassen */
     z-index: 10;
 }
 
 /* Toegevoegde tekst die verandert bij hover */
 #hover-text {
-    font-family: 'FOT-Matisse Pro EB', Arial, sans-serif;
+    font-family: 'FOT-Matisse Pro EB', Arial, sans-serif; /* Font consistent toepassen */
     font-size: 30px;
     color: white;
     position: absolute;
@@ -81,7 +81,7 @@ footer {
 
 /* Stijl voor de tekst-knop zonder achtergrond */
 #text-button {
-    font-family: 'FOT-Matisse Pro EB', sans-serif;
+    font-family: 'FOT-Matisse Pro EB', Arial, sans-serif; /* Font consistent toepassen */
     font-size: 35px;
     color: white;
     padding: 0;
@@ -129,6 +129,7 @@ footer {
         bottom: 20px; /* Verplaats de knop naar beneden */
         left: 50%; /* Centreer de knop horizontaal */
         transform: none; /* Verwijder de horizontale verschuiving */
+        font-family: 'FOT-Matisse Pro EB', Arial, sans-serif; /* Font consistent toepassen */
     }
 
     /* Zorg ervoor dat de hover tekst bovenaan verschijnt */
@@ -137,6 +138,7 @@ footer {
         bottom: 90%; /* Verplaats de hover-tekst naar boven */
         left: 50%;
         transform: none; /* Verwijder de horizontale verschuiving */
+        font-family: 'FOT-Matisse Pro EB', Arial, sans-serif; /* Font consistent toepassen */
     }
 
     /* Zorg ervoor dat de video goed schaalt op mobiel */
@@ -169,11 +171,13 @@ footer {
     #text-button {
         left: 20px; /* Verplaats de knop naar links */
         transform: none; /* Verwijder de vertaling */
+        font-family: 'FOT-Matisse Pro EB', Arial, sans-serif; /* Font consistent toepassen */
     }
 
     /* Verplaats de hover-tekst naar links op desktop */
     #hover-text {
         left: 20px; /* Verplaats de hover-tekst naar links */
         transform: none; /* Verwijder de vertaling */
+        font-family: 'FOT-Matisse Pro EB', Arial, sans-serif; /* Font consistent toepassen */
     }
 }
