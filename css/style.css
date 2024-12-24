@@ -20,32 +20,18 @@ html, body {
     min-height: 100vh; /* Zorg ervoor dat de pagina minimaal het scherm vult */
 }
 
-/* Video-instellingen voor desktop */
+/* Video-instellingen voor desktop en mobiel */
 #background-video {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* Zorgt ervoor dat de video altijd het scherm vult */
     z-index: 0;
     pointer-events: none;
     playsinline: true; /* Voorkom fullscreen op mobiele apparaten */
     display: block; /* Zorg ervoor dat de video als block wordt weergegeven */
-}
-
-/* Statische achtergrondafbeelding voor mobiele apparaten */
-@media only screen and (max-width: 768px) {
-    body {
-        background-image: url('https://github.com/VanishedLynx/KUNOICHIRECORDS/raw/main/images/mobile-background.jpg');
-        background-size: cover;
-        background-position: center center;
-        background-attachment: fixed;
-    }
-
-    #background-video {
-        display: none; /* Verberg de video op mobiele apparaten */
-    }
 }
 
 /* Overlay met PNG afbeelding */
@@ -160,4 +146,11 @@ footer {
     #gif-container img {
         width: 300px;
     }
+
+    /* Zorg ervoor dat de video goed schaalt op mobiel */
+    #background-video {
+        object-fit: cover;
+        height: 100%;
+    }
 }
+
