@@ -8,13 +8,13 @@
 
 /* Verwijder alles wat zorgt voor ongewenste ruimte bovenaan de pagina */
 html, body {
-    font-family: 'FOT-Matisse Pro EB', Arial, sans-serif; /* Gebruik de nieuwe font */
+    font-family: 'FOT-Matisse Pro EB', Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
     background-color: #00000000; /* Transparante achtergrond */
     color: #333;
-    position: relative; /* Zorgt ervoor dat pseudo-elementen kunnen worden gepositioneerd */
+    position: relative;
     overflow: hidden; /* Zorgt ervoor dat niets buiten de body verschijnt */
     height: 100%; /* Zorgt ervoor dat de volledige hoogte van de pagina wordt benut */
 }
@@ -27,20 +27,9 @@ html, body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: 0; /* Zet de video onder alle andere elementen */
-}
-
-/* Verwijder de vignette-effect (body::before) om de transparante balk te verwijderen */
-body::before {
-    content: ""; 
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: none; /* Zorg ervoor dat er geen achtergrondkleur of effect is */
-    pointer-events: none; /* Zorgt ervoor dat het niet interactief is */
-    z-index: 1; /* Zorgt ervoor dat het boven de video komt */
+    z-index: 0;
+    /* Gebruik playsinline voor mobiel om video's in de pagina te tonen zonder de fullscreen modus */
+    playsinline: true;
 }
 
 /* Overlay met PNG afbeelding */
@@ -50,14 +39,14 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 2; /* Zet de overlay boven de video */
-    pointer-events: none; /* Zorgt ervoor dat de overlay geen interactie blokkeert */
+    z-index: 2;
+    pointer-events: none;
 }
 
 #overlay img {
-    width: 100%; /* Zorg ervoor dat de afbeelding de volledige breedte vult */
-    height: auto; /* Zorgt ervoor dat de afbeelding proportioneel schaalt */
-    object-fit: contain; /* Zorgt ervoor dat de afbeelding volledig zichtbaar is */
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
     position: absolute;
     transform: translateX(-100px); /* Verplaats de afbeelding naar links */
 }
@@ -65,111 +54,100 @@ body::before {
 /* Footer naar de linkeronderkant van de pagina */
 footer {
     position: absolute;
-    left: 0; /* Plaatst de footer helemaal links */
-    bottom: 0px; /* Plaatst de footer helemaal onderaan */
-    padding: 20px; /* Voeg wat padding toe voor ruimte rondom de tekst */
-    width: 100%; /* Zorg ervoor dat de footer de volledige breedte van de pagina vult */
-    text-align: left; /* Zorg ervoor dat de tekst links uitgelijnd is */
-    color: white; /* Zet de tekstkleur naar wit voor contrast (pas dit aan naar wens) */
+    left: 0;
+    bottom: 0px;
+    padding: 20px;
+    width: 100%;
+    text-align: left;
+    color: white;
     font-size: larger;
-    font-family: 'FOT-Matisse Pro EB', Arial, sans-serif; /* Je nieuwe font */
-    z-index: 10; /* Zorgt ervoor dat de footer boven andere elementen staat */
+    font-family: 'FOT-Matisse Pro EB', Arial, sans-serif;
+    z-index: 10;
 }
 
 /* Toegevoegde tekst die verandert bij hover */
 #hover-text {
-    font-family: 'FOT-Matisse Pro EB', Arial, sans-serif; /* Gebruik je gewenste font */
-    font-size: 4vw; /* Gebruik viewport units voor flexibele lettergrootte */
-    color: white; /* Oorspronkelijke kleur */
-    position: absolute; /* Zet de tekst op een vaste locatie */
-    bottom: 90px; /* Zet de tekst 10px van de onderkant */
-    left: 5%; /* Zet de tekst 5% van de linkerkant */
-    transition: all 0.5s ease; /* Zorg voor een soepele overgang voor kleur en transformatie */
-    cursor: pointer; /* Verander de cursor naar pointer om aan te geven dat het interactief is */
-    z-index: 15; /* Zorg ervoor dat de tekst boven de andere elementen komt */
+    font-family: 'FOT-Matisse Pro EB', Arial, sans-serif;
+    font-size: 30px;
+    color: white;
+    position: absolute;
+    bottom: 90px;
+    left: 50px;
+    transition: all 0.5s ease;
+    cursor: pointer;
+    z-index: 15;
 }
 
 /* Hover-effect voor de tekst */
 #hover-text:hover {
-    color: #ffffff; /* Verander de kleur bij hover */
-    transform: scale(1.1); /* Voeg een schalingseffect toe */
-    font-family: FOT-Matisse Pro EB, sans-serif;
+    color: #ffffff;
+    transform: scale(1.1);
 }
 
 /* Stijl voor de tekst-knop zonder achtergrond */
 #text-button {
     font-family: Arial, sans-serif;
-    font-size: 6vw; /* Gebruik viewport units voor flexibele lettergrootte */
+    font-size: 35px;
     color: white;
-    padding: 0; /* Verwijder padding */
+    padding: 0;
     text-align: center;
     display: inline-block;
-    cursor: pointer; /* Laat zien dat het interactief is */
+    cursor: pointer;
     position: absolute;
-    bottom: 140px; /* Positie boven de hover-tekst */
-    left: 50%; /* Horizontaal gecentreerd */
-    transform: translateX(-50%); /* Zorg ervoor dat het precies gecentreerd is */
+    bottom: 140px;
+    left: 150px;
+    transform: translateX(-50%);
     font-family: FOT-Matisse Pro EB, sans-serif;
-    z-index: 15; /* Zorg dat het boven andere elementen staat */
-    transition: all 0.5s ease; /* Zorg voor een vloeiende transitie */
+    z-index: 15;
+    transition: all 0.5s ease;
 }
 
 /* Hover-effect voor de tekst-knop zonder achtergrond */
 #text-button:hover {
-    color: #ffffff; /* Verander tekstkleur bij hover */
-    transform: scale(1.1); /* Voeg een schalingseffect toe */
-    font-family: FOT-Matisse Pro EB, sans-serif;
+    color: #ffffff;
+    transform: scale(1.1);
 }
 
 /* De GIF-container die begint met opacity 0 */
 #gif-container {
-    position: fixed; /* Plaats de GIF in het midden van de pagina */
-    top: 50%; /* Verticaal gecentreerd */
-    left: 50%; /* Horizontaal gecentreerd */
-    transform: translate(-50%, -50%); /* Centraal uitlijnen */
-    opacity: 0; /* Maak de GIF aanvankelijk onzichtbaar */
-    transition: opacity 2s ease; /* Geleidelijk verschijnen */
-    z-index: 5; /* Zorg dat de GIF onder andere elementen staat */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 2s ease;
+    z-index: 5;
 }
 
+/* Laad de GIF op een lagere resolutie op mobiele apparaten */
 #gif-container img {
-    width: 80%; /* Maak de GIF smaller op mobiele apparaten */
-    max-width: 600px; /* Zorg ervoor dat de GIF niet groter wordt dan 600px */
-    height: auto; /* Zorgt ervoor dat de GIF proportioneel schaalt */
+    width: 600px;
 }
 
 /* De GIF verschijnt als je over de knop heen gaat */
 #text-button:hover ~ #gif-container {
-    opacity: 1; /* Maak de GIF zichtbaar bij hover */
+    opacity: 1;
 }
 
-/* Responsive ontwerp voor mobiele apparaten */
-@media (max-width: 768px) {
-    body {
-        font-size: 14px;
-    }
-
-    /* Pas de video aan voor kleinere schermen */
+/* Media Query voor mobiele apparaten */
+@media only screen and (max-width: 768px) {
+    /* Verklein de video en pas de afbeelding aan voor mobiel */
     #background-video {
-        width: 100%;
-        height: auto;
+        object-fit: cover;
+        height: 60%;
     }
 
-    /* Pas de tekstknop aan */
     #text-button {
-        font-size: 8vw; /* Grotere knoptekst op mobiele schermen */
-        bottom: 120px;
+        font-size: 28px;
+        bottom: 100px;
     }
 
-    /* Pas de hover-tekst aan */
     #hover-text {
-        font-size: 6vw; /* Grotere tekst bij hover op mobiele schermen */
-        bottom: 60px;
+        font-size: 20px;
+        bottom: 50px;
     }
 
-    /* GIF-container voor mobiel aanpassen */
     #gif-container img {
-        width: 80%; /* Zorg ervoor dat de GIF kleiner wordt weergegeven op mobiel */
-        max-width: 500px; /* Zorg ervoor dat de GIF niet groter is dan 500px op mobiel */
+        width: 300px;
     }
 }
