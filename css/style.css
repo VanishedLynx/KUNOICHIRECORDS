@@ -164,3 +164,18 @@ footer {
         color: white;
     }
 }
+
+/* Media query voor desktop (min-width: 769px) */
+@media only screen and (min-width: 769px) {
+    /* Verplaats de tekst-knop naar links op desktop */
+    #text-button {
+        left: 20px; /* Verplaats de knop naar links op desktop */
+        transform: none; /* Verwijder de transformatie */
+    }
+
+    /* Verplaats de hover-tekst naar links op desktop */
+    #hover-text {
+        left: 20px; /* Verplaats de hover-tekst naar links op desktop */
+        transform: none; /* Verwijder de transformatie */
+    }
+}
