@@ -34,9 +34,18 @@ html, body {
     display: block; /* Zorg ervoor dat de video als block wordt weergegeven */
 }
 
-/* Verberg de mobiele video op desktop */
-#background-video-mobile {
-    display: none;
+/* Statische achtergrondafbeelding voor mobiele apparaten */
+@media only screen and (max-width: 768px) {
+    body {
+        background-image: url('https://github.com/VanishedLynx/KUNOICHIRECORDS/raw/main/images/mobile-background.jpg');
+        background-size: cover;
+        background-position: center center;
+        background-attachment: fixed;
+    }
+
+    #background-video {
+        display: none; /* Verberg de video op mobiele apparaten */
+    }
 }
 
 /* Overlay met PNG afbeelding */
@@ -138,19 +147,6 @@ footer {
 
 /* Media Query voor mobiele apparaten */
 @media only screen and (max-width: 768px) {
-    /* Verberg de desktop video en toon de mobiele video */
-    #background-video {
-        display: none;
-    }
-
-    /* Toon de mobiele video op mobiel */
-    #background-video-mobile {
-        display: block;
-        width: 100%;
-        height: auto;
-        object-fit: cover; /* Zorgt ervoor dat de video het scherm bedekt */
-    }
-
     #text-button {
         font-size: 28px;
         bottom: 100px;
