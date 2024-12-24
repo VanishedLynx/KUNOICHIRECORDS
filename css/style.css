@@ -1,11 +1,3 @@
-/* Laad het .otf bestand (niet ideaal voor webgebruik, maar kan werken) */
-@font-face {
-    font-family: 'FOT-Matisse Pro EB';
-    src: url('../fonts/FOT-Matisse-Pro-EB.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-}
-
 /* Verwijder alles wat zorgt voor ongewenste ruimte bovenaan de pagina */
 html, body {
     font-family: 'FOT-Matisse Pro EB', Arial, sans-serif;
@@ -30,8 +22,11 @@ html, body {
     object-fit: cover; /* Zorgt ervoor dat de video altijd het scherm vult */
     z-index: 0;
     pointer-events: none; /* Zorgt ervoor dat je niet per ongeluk kunt interageren met de video */
-    playsinline: true; /* Voorkom fullscreen op mobiele apparaten */
-    display: block; /* Zorg ervoor dat de video als block wordt weergegeven */
+    display: block;
+    /* Zorg ervoor dat de video altijd op het scherm wordt weergegeven */
+    background-color: black; /* Voeg een zwarte achtergrond toe voor als de video niet wordt geladen */
+    transition: opacity 1s ease-in-out; /* Smooth fade in effect */
+    opacity: 1; /* Zorg ervoor dat de video zichtbaar is */
 }
 
 /* Overlay met PNG afbeelding */
