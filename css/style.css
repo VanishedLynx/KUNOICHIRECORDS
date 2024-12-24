@@ -97,7 +97,7 @@ footer {
     cursor: pointer;
     position: absolute;
     bottom: 140px;
-    left: 150px; /* Knop verschuiven naar links op desktop */
+    left: 150px; /* Dit plaatst de knop naar links op desktop */
     transform: translateX(-50%);
     font-family: FOT-Matisse Pro EB, sans-serif;
     z-index: 15;
@@ -145,7 +145,6 @@ footer {
         left: 50%; /* Centreer de knop horizontaal */
         transform: translateX(-50%); /* Perfect centreren */
         position: absolute; /* Absoluut gepositioneerd ten opzichte van de body */
-        transition: none; /* Geen transitie meer */
     }
 
     /* Zorg ervoor dat de hover tekst bovenaan verschijnt */
@@ -154,7 +153,6 @@ footer {
         bottom: 90%; /* Verplaats de hover-tekst naar boven */
         left: 50%;
         transform: translateX(-50%); /* Centreer de hover-tekst */
-        transition: none; /* Geen transitie meer */
     }
 
     /* Zorg ervoor dat de video goed schaalt op mobiel */
