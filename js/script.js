@@ -29,7 +29,7 @@ if (!isMobile()) {
     });
 }
 
-// Voeg de klikfunctionaliteit toe aan de hover-tekst (voor mobiel)
+// Voeg de klikfunctionaliteit toe aan de hover-tekst (werkt op mobiel en desktop)
 hoverText.addEventListener('click', function () {
     if (hoverText.textContent === 'ここで何をしているの..？') {
         hoverText.textContent = 'WHAT ARE YOU DOING HERE..?'; // Engelse tekst bij klik
@@ -38,7 +38,7 @@ hoverText.addEventListener('click', function () {
     }
 });
 
-// Voeg de klikfunctionaliteit toe aan de tekst-knop (voor mobiel)
+// Voeg de klikfunctionaliteit toe aan de tekst-knop (werkt op mobiel en desktop)
 textButton.addEventListener('click', function () {
     if (textButton.textContent === 'ゼノフェスト') {
         textButton.textContent = 'XENO-FEST'; // Engelse tekst bij klik
