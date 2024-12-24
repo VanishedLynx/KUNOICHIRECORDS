@@ -80,8 +80,8 @@ footer {
     z-index: 15;
 }
 
-/* Hover-effect voor de tekst */
-#hover-text:hover, #hover-text:active {
+/* Hover-effect voor de tekst (alleen voor desktop) */
+#hover-text:hover {
     color: #ffffff;
     transform: scale(1.1);
 }
@@ -97,15 +97,15 @@ footer {
     cursor: pointer;
     position: absolute;
     bottom: 140px;
-    left: 50%;
+    left: 150px;
     transform: translateX(-50%);
     font-family: FOT-Matisse Pro EB, sans-serif;
     z-index: 15;
     transition: all 0.5s ease;
 }
 
-/* Hover-effect voor de tekst-knop zonder achtergrond */
-#text-button:hover, #text-button:active {
+/* Hover-effect voor de tekst-knop zonder achtergrond (alleen voor desktop) */
+#text-button:hover {
     color: #ffffff;
     transform: scale(1.1);
 }
@@ -145,6 +145,7 @@ footer {
         left: 50%; /* Centreer de knop horizontaal */
         transform: translateX(-50%); /* Perfect centreren */
         position: absolute; /* Absoluut gepositioneerd ten opzichte van de body */
+        transition: none; /* Geen transitie meer */
     }
 
     /* Zorg ervoor dat de hover tekst bovenaan verschijnt */
@@ -153,6 +154,7 @@ footer {
         bottom: 90%; /* Verplaats de hover-tekst naar boven */
         left: 50%;
         transform: translateX(-50%); /* Centreer de hover-tekst */
+        transition: none; /* Geen transitie meer */
     }
 
     /* Zorg ervoor dat de video goed schaalt op mobiel */
@@ -167,14 +169,14 @@ footer {
         width: 200px; /* Verklein de gif voor mobiel */
     }
 
-    /* Verwijder hover-effecten voor mobiel, gebruik :active in plaats daarvan */
-    #text-button, #hover-text {
-        transition: none; /* Verwijder de transities op mobiel */
+    /* Zorg ervoor dat er geen hover-effecten zijn op mobiel */
+    #text-button:hover {
+        transform: none;
+        color: white;
     }
 
-    /* Maak de knoppen interactief met :active */
-    #text-button:active, #hover-text:active {
-        transform: scale(1.1);
-        color: #ffffff;
+    #hover-text:hover {
+        transform: none;
+        color: white;
     }
 }
