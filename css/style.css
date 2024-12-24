@@ -150,7 +150,7 @@ footer {
     /* Zorg ervoor dat de hover tekst bovenaan verschijnt */
     #hover-text {
         font-size: 20px;
-        bottom: 80px; /* Verplaats de hover-tekst naar boven */
+        bottom: 90%; /* Verplaats de hover-tekst naar boven */
         left: 50%;
         transform: translateX(-50%); /* Centreer de hover-tekst */
     }
