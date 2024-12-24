@@ -20,7 +20,7 @@ html, body {
     min-height: 100vh; /* Zorg ervoor dat de pagina minimaal het scherm vult */
 }
 
-/* Video-instellingen voor desktop en mobiel */
+/* Video-instellingen voor desktop */
 #background-video {
     position: fixed;
     top: 0;
@@ -32,6 +32,11 @@ html, body {
     pointer-events: none;
     playsinline: true; /* Voorkom fullscreen op mobiele apparaten */
     display: block; /* Zorg ervoor dat de video als block wordt weergegeven */
+}
+
+/* Verberg de mobiele video op desktop */
+#background-video-mobile {
+    display: none;
 }
 
 /* Overlay met PNG afbeelding */
@@ -133,6 +138,19 @@ footer {
 
 /* Media Query voor mobiele apparaten */
 @media only screen and (max-width: 768px) {
+    /* Verberg de desktop video en toon de mobiele video */
+    #background-video {
+        display: none;
+    }
+
+    /* Toon de mobiele video op mobiel */
+    #background-video-mobile {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: cover; /* Zorgt ervoor dat de video het scherm bedekt */
+    }
+
     #text-button {
         font-size: 28px;
         bottom: 100px;
@@ -146,11 +164,4 @@ footer {
     #gif-container img {
         width: 300px;
     }
-
-    /* Zorg ervoor dat de video goed schaalt op mobiel */
-    #background-video {
-        object-fit: cover;
-        height: 100%;
-    }
 }
-
