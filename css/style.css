@@ -73,8 +73,8 @@ footer {
     color: white;
     position: absolute;
     bottom: 90px;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 50%; /* Centraal op de pagina */
+    transform: translateX(-50%); /* Centraal uitlijnen */
     transition: all 0.5s ease;
     cursor: pointer;
     z-index: 15;
@@ -91,8 +91,8 @@ footer {
     cursor: pointer;
     position: absolute;
     bottom: 140px;
-    left: 50%;
-    transform: translateX(-50%); /* Centreer de knop horizontaal */
+    left: 50%; /* Centraal op de pagina */
+    transform: translateX(-50%); /* Centraal uitlijnen */
     z-index: 15;
     transition: all 0.5s ease;
 }
