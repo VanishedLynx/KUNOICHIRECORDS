@@ -16,10 +16,8 @@ if (!isMobile()) {
     hoverText.addEventListener('mouseleave', function () {
         hoverText.textContent = 'ここで何をしているの..？'; // Japans tekst terugzetten bij hover stoppen
     });
-}
 
-// Voeg dezelfde hover-functionaliteit toe aan de tekst-knop (alleen op desktop)
-if (!isMobile()) {
+    // Voeg dezelfde hover-functionaliteit toe aan de tekst-knop (alleen op desktop)
     textButton.addEventListener('mouseenter', function () {
         textButton.textContent = 'XENO-FEST'; // Engelse tekst bij hover
     });
@@ -30,19 +28,21 @@ if (!isMobile()) {
 }
 
 // Voeg de klikfunctionaliteit toe aan de hover-tekst (voor mobiel)
-hoverText.addEventListener('click', function () {
-    if (hoverText.textContent === 'ここで何をしているの..？') {
-        hoverText.textContent = 'WHAT ARE YOU DOING HERE..?'; // Engelse tekst bij klik
-    } else {
-        hoverText.textContent = 'ここで何をしているの..？'; // Japans tekst terugzetten bij klik
-    }
-});
+if (isMobile()) {
+    hoverText.addEventListener('click', function () {
+        if (hoverText.textContent === 'ここで何をしているの..？') {
+            hoverText.textContent = 'WHAT ARE YOU DOING HERE..?'; // Engelse tekst bij klik
+        } else {
+            hoverText.textContent = 'ここで何をしているの..？'; // Japans tekst terugzetten bij klik
+        }
+    });
 
-// Voeg de klikfunctionaliteit toe aan de tekst-knop (voor mobiel)
-textButton.addEventListener('click', function () {
-    if (textButton.textContent === 'ゼノフェスト') {
-        textButton.textContent = 'XENO-FEST'; // Engelse tekst bij klik
-    } else {
-        textButton.textContent = 'ゼノフェスト'; // Japans tekst terugzetten bij klik
-    }
-});
+    // Voeg de klikfunctionaliteit toe aan de tekst-knop (voor mobiel)
+    textButton.addEventListener('click', function () {
+        if (textButton.textContent === 'ゼノフェスト') {
+            textButton.textContent = 'XENO-FEST'; // Engelse tekst bij klik
+        } else {
+            textButton.textContent = 'ゼノフェスト'; // Japans tekst terugzetten bij klik
+        }
+    });
+}
