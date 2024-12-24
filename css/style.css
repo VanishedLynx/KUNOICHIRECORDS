@@ -150,7 +150,7 @@ footer {
 
     /* Verklein de gif op mobiel */
     #gif-container img {
-        width: 400px; /* Verklein de gif voor mobiel */
+        width: 350px; /* Verklein de gif voor mobiel */
         height: 500px;  /* Houd de verhoudingen intact */
     }
 
