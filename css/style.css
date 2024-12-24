@@ -39,7 +39,7 @@ html, body {
     display: none;
 }
 
-/* Overlay met PNG afbeelding */
+/* Overlay met PNG afbeelding (alleen zichtbaar op desktop) */
 #overlay {
     position: absolute;
     top: 0;
@@ -56,6 +56,46 @@ html, body {
     object-fit: contain;
     position: absolute;
     transform: translateX(-100px); /* Verplaats de afbeelding naar links */
+}
+
+/* Verberg de overlay afbeelding op mobiel */
+@media only screen and (max-width: 768px) {
+    #overlay {
+        display: none; /* Verbergt de overlay afbeelding op mobiele apparaten */
+    }
+
+    /* Verberg de desktop video en toon de mobiele video */
+    #background-video {
+        display: none;
+    }
+
+    /* Toon de mobiele video op mobiel */
+    #background-video-mobile {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: cover; /* Zorgt ervoor dat de video het scherm bedekt */
+    }
+
+    #text-button {
+        font-size: 28px;
+        position: absolute;
+        bottom: 20px; /* Zet de button onderin het scherm */
+        left: 50%;
+        transform: translateX(-50%); /* Centreert de knop horizontaal */
+    }
+
+    #hover-text {
+        font-size: 20px;
+        position: absolute;
+        top: 20px; /* Zet de hover tekst bovenin het scherm */
+        left: 50%;
+        transform: translateX(-50%); /* Centreert de tekst horizontaal */
+    }
+
+    #gif-container img {
+        width: 300px;
+    }
 }
 
 /* Footer naar de linkeronderkant van de pagina */
@@ -134,34 +174,4 @@ footer {
 /* De GIF verschijnt als je over de knop heen gaat */
 #text-button:hover ~ #gif-container {
     opacity: 1;
-}
-
-/* Media Query voor mobiele apparaten */
-@media only screen and (max-width: 768px) {
-    /* Verberg de desktop video en toon de mobiele video */
-    #background-video {
-        display: none;
-    }
-
-    /* Toon de mobiele video op mobiel */
-    #background-video-mobile {
-        display: block;
-        width: 100%;
-        height: auto;
-        object-fit: cover; /* Zorgt ervoor dat de video het scherm bedekt */
-    }
-
-    #text-button {
-        font-size: 28px;
-        bottom: 100px;
-    }
-
-    #hover-text {
-        font-size: 20px;
-        bottom: 50px;
-    }
-
-    #gif-container img {
-        width: 300px;
-    }
 }
