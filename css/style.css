@@ -29,7 +29,7 @@ html, body {
     height: 100%;
     object-fit: cover; /* Zorgt ervoor dat de video altijd het scherm vult */
     z-index: 0;
-    pointer-events: none; /* Zorgt ervoor dat je niet per ongeluk kunt interageren met de video */
+    pointer-events: none;
     playsinline: true; /* Voorkom fullscreen op mobiele apparaten */
     display: block; /* Zorg ervoor dat de video als block wordt weergegeven */
 }
