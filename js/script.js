@@ -7,36 +7,26 @@ function isMobile() {
     return window.matchMedia("only screen and (max-width: 768px)").matches;
 }
 
-// Functie om de juiste video toe te voegen voor mobiel en desktop
-function loadVideoForDevice() {
-    const videoElement = document.getElementById('background-video');
+// Functie om de tekst te veranderen bij klik
+function changeText(elementId) {
+    const element = document.getElementById(elementId);
 
-    // Verwijder alle bestaande <source> elementen
-    while (videoElement.firstChild) {
-        videoElement.removeChild(videoElement.firstChild);
+    if (elementId === 'hover-text') {
+        if (element.textContent === 'ここで何をしているの..？') {
+            element.textContent = 'WHAT ARE YOU DOING HERE..?'; // Engelse tekst bij klik
+        } else {
+            element.textContent = 'ここで何をしているの..？'; // Japans tekst terugzetten bij klik
+        }
     }
 
-    // Controleer of de gebruiker op een mobiel apparaat zit
-    if (isMobile()) {
-        // Voeg WebM video toe voor mobiel
-        const sourceWebM = document.createElement('source');
-        sourceWebM.src = 'videos/bgvideo.webm'; // Je WebM video
-        sourceWebM.type = 'video/webm';
-        videoElement.appendChild(sourceWebM);
-    } else {
-        // Voeg MP4 video toe voor desktop
-        const sourceMP4 = document.createElement('source');
-        sourceMP4.src = 'videos/bgvideo.mp4'; // Je MP4 video
-        sourceMP4.type = 'video/mp4';
-        videoElement.appendChild(sourceMP4);
+    if (elementId === 'text-button') {
+        if (element.textContent === 'ゼノフェスト') {
+            element.textContent = 'XENO-FEST'; // Engelse tekst bij klik
+        } else {
+            element.textContent = 'ゼノフェスト'; // Japans tekst terugzetten bij klik
+        }
     }
 }
-
-// Zorg ervoor dat de juiste video geladen wordt zodra de pagina is geladen
-window.addEventListener('load', loadVideoForDevice);
-
-// Als de schermgrootte verandert, laad de juiste video opnieuw
-window.addEventListener('resize', loadVideoForDevice);
 
 // Voeg de hover-functionaliteit toe aan de hover-tekst (alleen op desktop)
 if (!isMobile()) {
@@ -60,20 +50,12 @@ if (!isMobile()) {
     });
 }
 
-// Voeg de klikfunctionaliteit toe aan de hover-tekst (werkt op mobiel en desktop)
+// Voeg de klikfunctionaliteit toe aan de hover-tekst (voor mobiel)
 hoverText.addEventListener('click', function () {
-    if (hoverText.textContent === 'ここで何をしているの..？') {
-        hoverText.textContent = 'WHAT ARE YOU DOING HERE..?'; // Engelse tekst bij klik
-    } else {
-        hoverText.textContent = 'ここで何をしているの..？'; // Japans tekst terugzetten bij klik
-    }
+    changeText('hover-text');
 });
 
-// Voeg de klikfunctionaliteit toe aan de tekst-knop (werkt op mobiel en desktop)
+// Voeg de klikfunctionaliteit toe aan de tekst-knop (voor mobiel)
 textButton.addEventListener('click', function () {
-    if (textButton.textContent === 'ゼノフェスト') {
-        textButton.textContent = 'XENO-FEST'; // Engelse tekst bij klik
-    } else {
-        textButton.textContent = 'ゼノフェスト'; // Japans tekst terugzetten bij klik
-    }
+    changeText('text-button');
 });
