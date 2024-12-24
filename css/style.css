@@ -131,25 +131,39 @@ footer {
     opacity: 1;
 }
 
-/* Media Query voor mobiele apparaten */
+/* Media query voor mobiele apparaten */
 @media only screen and (max-width: 768px) {
+    /* Verberg de overlay afbeelding op mobiel */
+    #overlay {
+        display: none;
+    }
+
+    /* Zorg ervoor dat de tekst-knop onderaan het scherm verschijnt en gecentreerd is */
     #text-button {
         font-size: 28px;
-        bottom: 100px;
+        bottom: 20px; /* Verplaats de knop naar beneden */
+        left: 50%; /* Centreer de knop horizontaal */
+        transform: translateX(-50%); /* Perfect centreren */
+        position: absolute; /* Absoluut gepositioneerd ten opzichte van de body */
     }
 
+    /* Zorg ervoor dat de hover tekst bovenaan verschijnt */
     #hover-text {
         font-size: 20px;
-        bottom: 50px;
-    }
-
-    #gif-container img {
-        width: 300px;
+        bottom: 80px; /* Verplaats de hover-tekst naar boven */
+        left: 50%;
+        transform: translateX(-50%); /* Centreer de hover-tekst */
     }
 
     /* Zorg ervoor dat de video goed schaalt op mobiel */
     #background-video {
         object-fit: cover;
-        height: 100%;
+        height: 100%; /* Laat de video volledig het scherm vullen */
+        top: 0;
+    }
+
+    /* Verklein de gif op mobiel */
+    #gif-container img {
+        width: 200px; /* Verklein de gif voor mobiel */
     }
 }
