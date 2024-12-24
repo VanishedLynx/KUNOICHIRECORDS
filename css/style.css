@@ -39,7 +39,7 @@ html, body {
     display: none;
 }
 
-/* Overlay met PNG afbeelding (alleen zichtbaar op desktop) */
+/* Overlay met PNG afbeelding */
 #overlay {
     position: absolute;
     top: 0;
@@ -58,50 +58,40 @@ html, body {
     transform: translateX(-100px); /* Verplaats de afbeelding naar links */
 }
 
-/* Verberg de overlay afbeelding op mobiel */
-@media only screen and (max-width: 768px) {
-    #overlay {
-        display: none; /* Verbergt de overlay afbeelding op mobiele apparaten */
-    }
-
-    /* Verberg de desktop video en toon de mobiele video */
-    #background-video {
-        display: none;
-    }
-
-    /* Toon de mobiele video op mobiel */
-    #background-video-mobile {
-        display: block;
-        width: 100%;
-        height: auto;
-        object-fit: cover; /* Zorgt ervoor dat de video het scherm bedekt */
-    }
-
-    /* Centraal positioneren van de text-button op mobiel */
-    #text-button {
-        font-size: 28px;
-        position: absolute;
-        bottom: 20px; /* Zet de knop onderin het scherm */
-        left: 50%;
-        transform: translateX(-50%); /* Centreert de knop horizontaal */
-    }
-
-    /* Centraal positioneren van de hover-text op mobiel */
-    #hover-text {
-        font-size: 20px;
-        position: absolute;
-        top: 20px; /* Zet de hover tekst bovenin het scherm */
-        left: 50%;
-        transform: translateX(-50%); /* Centreert de tekst horizontaal */
-    }
-
-    /* Laad de GIF op een lagere resolutie op mobiele apparaten */
-    #gif-container img {
-        width: 300px;
-    }
+/* Footer naar de linkeronderkant van de pagina */
+footer {
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+    padding: 20px;
+    width: 100%;
+    text-align: left;
+    color: white;
+    font-size: larger;
+    font-family: 'FOT-Matisse Pro EB', Arial, sans-serif;
+    z-index: 10;
 }
 
-/* Standaard instellingen voor de text-button op desktop */
+/* Toegevoegde tekst die verandert bij hover */
+#hover-text {
+    font-family: 'FOT-Matisse Pro EB', Arial, sans-serif;
+    font-size: 30px;
+    color: white;
+    position: absolute;
+    bottom: 90px;
+    left: 50px;
+    transition: all 0.5s ease;
+    cursor: pointer;
+    z-index: 15;
+}
+
+/* Hover-effect voor de tekst */
+#hover-text:hover {
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+/* Stijl voor de tekst-knop zonder achtergrond */
 #text-button {
     font-family: Arial, sans-serif;
     font-size: 35px;
@@ -125,25 +115,6 @@ html, body {
     transform: scale(1.1);
 }
 
-/* Hover-effect voor de hover-tekst */
-#hover-text {
-    font-family: 'FOT-Matisse Pro EB', Arial, sans-serif;
-    font-size: 30px;
-    color: white;
-    position: absolute;
-    bottom: 90px;
-    left: 50px;
-    transition: all 0.5s ease;
-    cursor: pointer;
-    z-index: 15;
-}
-
-/* Hover-effect voor de tekst */
-#hover-text:hover {
-    color: #ffffff;
-    transform: scale(1.1);
-}
-
 /* De GIF-container die begint met opacity 0 */
 #gif-container {
     position: fixed;
@@ -163,4 +134,34 @@ html, body {
 /* De GIF verschijnt als je over de knop heen gaat */
 #text-button:hover ~ #gif-container {
     opacity: 1;
+}
+
+/* Media Query voor mobiele apparaten */
+@media only screen and (max-width: 768px) {
+    /* Verberg de desktop video en toon de mobiele video */
+    #background-video {
+        display: none;
+    }
+
+    /* Toon de mobiele video op mobiel */
+    #background-video-mobile {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: cover; /* Zorgt ervoor dat de video het scherm bedekt */
+    }
+
+    #text-button {
+        font-size: 28px;
+        bottom: 100px;
+    }
+
+    #hover-text {
+        font-size: 20px;
+        bottom: 50px;
+    }
+
+    #gif-container img {
+        width: 300px;
+    }
 }
